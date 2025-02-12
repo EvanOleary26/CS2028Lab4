@@ -13,14 +13,20 @@ class TV: public Shows {
         //Getters
         std::string getSeries() { return series; }
         //Setters
-        void setSeries(std::string newSeries[][]){
-            series[sizeof(newSeries)]
-            for (int c{}; c < newSeries)
-            series = newSeries
+        void setSeries(std::string newSeries[/*numSeasons*/][/*numEpisodes*/]){
+            series[sizeof(newSeries)][sizeof(newSeries)];
+            for(int r{}; r < sizeof(newSeries);r++) {
+                for(int c{}; c < sizeof(newSeries);c++) {
+                
+                }
+            }
+
         }
 
         //Constructors
-
+        TV() {
+            series = {{" "}};
+        }
 
 
 
