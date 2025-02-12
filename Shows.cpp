@@ -8,6 +8,24 @@ class Shows {
         std::string description;
     
     public:
+        //Getters
+        
+
+
+        //Setters
+
+
+        //Constructors
+        Shows() {
+            title = " ";
+            description = " ";
+            }
+
+        Shows(std::string newTitle,std::string newDesc) {
+            title = newTitle;
+            description = newDesc;
+        }
+
 
 
 
