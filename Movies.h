@@ -10,14 +10,10 @@ class Movies: public Shows{
 
     public:
         //Getters
-        int getRunTime(){
-            return runtime;
-        }
+        int getRunTime(){ return runtime; }
 
         //Setters
-        void setRunTime(int newRunTime){
-            runtime = newRunTime;
-        }
+        void setRunTime(int newRunTime){ runtime = newRunTime; }
 
         //Constructors
         Movies() {
@@ -31,8 +27,8 @@ class Movies: public Shows{
         }
 
         //Functions
-        std::string Play();
-        
+        void Play();
+
 };
 
 

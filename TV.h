@@ -11,9 +11,7 @@ class TV: public Shows {
     public:
     //Needs work
         //Getters
-        std::string getSeries() {
-            return series;
-        }
+        std::string getSeries() { return series; }
         //Setters
         void setSeries(std::string newSeries[][]){
             series[sizeof(newSeries)]

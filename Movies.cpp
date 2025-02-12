@@ -1,11 +1,6 @@
-
 #include "Movies.h"
+#include <iostream>
 
-
-
-//Move over to Movies.h
-
-
-
-
-//
+void Movies::Play() {
+    std::cout << "Runtime: " << runtime << " minutes." << std::endl;
+}

@@ -8,22 +8,14 @@ class Shows {
     
     public:
         //Getters
-        std::string getTitle(){
-            return title;
-        }
+        std::string getTitle(){ return title; }
 
-        std::string getDesc() {
-            return description;
-        }
+        std::string getDesc() { return description; }
 
         //Setters
-        void setTitle(std::string newTitle) {
-            title = newTitle;
-        }
+        void setTitle(std::string newTitle) { title = newTitle; }
 
-        void setDesc(std::string newDesc) {
-            description = newDesc;
-        }
+        void setDesc(std::string newDesc) { description = newDesc; }
 
         //Constructors
         Shows() {
@@ -37,7 +29,7 @@ class Shows {
         }
 
         //Functions
-        virtual std::string Play();
+        virtual void Play();
         void Details();
 };
 
