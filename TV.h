@@ -2,16 +2,17 @@
 #define __TV_HPP
 
 #include "Shows.h"
+#include "Seasons.h"
 #include <iostream>
 
-class TV: public Shows {
+class TV: public Seasons{
     private: 
-        std::string series[0][0];
+        Seasons series[0];
 
     public:
     //Needs work
         //Getters
-        std::string getSeries() { return series; }
+        Seasons getSeries() { return series; }
         //Setters
         void setSeries(std::string newSeries[/*numSeasons*/][/*numEpisodes*/]){
             series[sizeof(newSeries)][sizeof(newSeries)];
