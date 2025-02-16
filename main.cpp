@@ -1,8 +1,21 @@
 #include <iostream>
 #include <string>
 
+#include "Shows.h"
+#include "Movies.h"
+#include "Seasons.h"
+//#include "TV.h"
+
 int main() {
 
+    Seasons season1;
+
+    std::cout << typeid(season1).name() << std::endl;
+    /*
+    for (auto &ele : season1){
+        std::cout << ele << std::endl;
+    }
+    */
     char continueProgram = 'y';
 
     while (continueProgram = 'y') {

@@ -9,17 +9,23 @@ class TV: public Shows{
     private: 
         static const int MAX_EPISODES = 10;
         static const int MAX_SEASONS = 5;
-        Seasons series[MAX_SEASONS][MAX_EPISODES];
+        Seasons series[MAX_SEASONS][MAX_EPISODES];  //series is an array of seasons, 
 
     public:
         //Getters
         
         //Setters
 
-
-
         //Constructors
-
+        TV() {
+            /*
+            for (auto &row : series){
+                for (auto &col : row){
+                    col = Shows();
+                }
+            }
+                */
+        }
 
         //Functions
 

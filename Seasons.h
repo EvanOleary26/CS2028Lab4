@@ -9,8 +9,6 @@
 class Seasons: public Shows{
     private:
         static const int MAX_EPISODES = 10;
-        static const int MAX_SEASONS = 5;
-        int numEpisodes = 0;
         Shows season[MAX_EPISODES]; //array season filled with "episodes"
     public:
         //Getters
@@ -30,6 +28,13 @@ class Seasons: public Shows{
         }
 
         //Constructors
+        Seasons(){
+            for (auto &ele : season){
+                    ele = Shows();
+            }
+        }
+
+
         Seasons(int items) {
             season[items];
         }

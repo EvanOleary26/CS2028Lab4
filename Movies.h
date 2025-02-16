@@ -6,7 +6,7 @@
 
 class Movies: public Shows{
     private:
-        int runtime;
+        int runtime; //Total length of the movie in minutes
 
     public:
         //Getters
