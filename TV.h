@@ -7,28 +7,41 @@
 
 class TV: public Shows{
     private: 
-        static const int MAX_EPISODES = 10;
         static const int MAX_SEASONS = 5;
-        Seasons series[MAX_SEASONS][MAX_EPISODES];  //series is an array of seasons, 
+        Seasons series[MAX_SEASONS];  //series is an array of seasons
+        int seasonCount;    //Current number of seasons 
 
     public:
         //Getters
+        Seasons getSeason(int inVal) {
+            if (inVal >= 0 && inVal < seasonCount) {   //check if inVal is valid
+                return series[inVal];
+            }
+            throw std::out_of_range("Season index out of range");
+        }
         
         //Setters
-
-        //Constructors
-        TV() {
-            /*
-            for (auto &row : series){
-                for (auto &col : row){
-                    col = Shows();
+        void setSeason(int inVal, Seasons season) {
+            if (inVal >= 0 && inVal < MAX_SEASONS) {
+                series[inVal] = season;
+                if (inVal >= seasonCount) { //if adding a season more than we already had increase seasonCount to follow that
+                    seasonCount = inVal + 1;
                 }
             }
-                */
         }
 
-        //Functions
+        //Constructors
+        TV() : seasonCount(0) {}  //Default Constructor
 
+        TV(std::string showTitle, std::string showDesc, int numSeasons = 0) 
+            : Shows(showTitle, showDesc), seasonCount(numSeasons) {
+                if (seasonCount > MAX_SEASONS) {    //make sure that the limit is not exceeded
+                        seasonCount = MAX_SEASONS;
+                }
+            }
+        //Functions
+        void Play();
+        void Display();
 
 
 };

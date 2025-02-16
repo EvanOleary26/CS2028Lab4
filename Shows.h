@@ -1,6 +1,8 @@
 #ifndef __SHOWS_HPP
 #define __SHOWS_HPP
 
+#include <iostream>
+
 class Shows {
     private:
         std::string title;
@@ -18,12 +20,9 @@ class Shows {
         void setDesc(std::string newDesc) { description = newDesc; }
 
         //Constructors
-        Shows() : title(" "), description(" ") {}
+        Shows() : title(" "), description(" ") {}  //Default Constructor
 
-        Shows(std::string newTitle,std::string newDesc) {
-            title = newTitle;
-            description = newDesc;
-        }
+        Shows(std::string newTitle,std::string newDesc) : title(newTitle), description(newDesc) {}
 
         //Functions
         virtual void Play();

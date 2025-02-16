@@ -16,18 +16,12 @@ class Movies: public Shows{
         void setRunTime(int newRunTime){ runtime = newRunTime; }
 
         //Constructors
-        Movies() {
-            Shows();
-            runtime = 0;
-            }
+        Movies() : Shows(), runtime(0) {}   //Default Constructor
 
-        Movies(std::string title, std::string desc, int newRunTime) {
-            Shows(title,desc);
-            runtime = newRunTime;
-        }
+        Movies(std::string title, std::string desc, int newRunTime) : Shows(title,desc), runtime(newRunTime) {}
 
         //Functions
-        void Play();
+        void Play() override;
 
 };
 
