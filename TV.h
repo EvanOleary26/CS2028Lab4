@@ -5,30 +5,20 @@
 #include "Seasons.h"
 #include <iostream>
 
-class TV: public Seasons{
+class TV: public Shows{
     private: 
-        Seasons series[0];
+        static const int MAX_EPISODES = 10;
+        static const int MAX_SEASONS = 5;
+        Seasons series[MAX_SEASONS][MAX_EPISODES];
 
     public:
-    //Needs work
         //Getters
-        Seasons getSeries() { return series; }
+        
         //Setters
-        void setSeries(std::string newSeries[/*numSeasons*/][/*numEpisodes*/]){
-            series[sizeof(newSeries)][sizeof(newSeries)];
-            for(int r{}; r < sizeof(newSeries);r++) {
-                for(int c{}; c < sizeof(newSeries);c++) {
-                
-                }
-            }
 
-        }
+
 
         //Constructors
-        TV() {
-            series = {{" "}};
-        }
-
 
 
         //Functions

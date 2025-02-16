@@ -8,11 +8,12 @@
 
 class Seasons: public Shows{
     private:
+        static const int MAX_EPISODES = 10;
+        static const int MAX_SEASONS = 5;
         int numEpisodes = 0;
-        Shows season[0];
+        Shows season[MAX_EPISODES]; //array season filled with "episodes"
     public:
         //Getters
-    
         Shows getEpisode(int inVal){
             return season[inVal];
         }
@@ -27,6 +28,7 @@ class Seasons: public Shows{
         void setEpisode(int inVal, Shows episode){
             season[inVal] = episode;
         }
+
         //Constructors
         Seasons(int items) {
             season[items];

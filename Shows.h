@@ -18,10 +18,7 @@ class Shows {
         void setDesc(std::string newDesc) { description = newDesc; }
 
         //Constructors
-        Shows() {
-            title = " ";
-            description = " ";
-            }
+        Shows() : title(" "), description(" ") {}
 
         Shows(std::string newTitle,std::string newDesc) {
             title = newTitle;
