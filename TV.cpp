@@ -28,8 +28,7 @@ void TV::Play() {
 }
 
 void TV::Details() {
-    std::cout << "Title: " << title << std::endl;
-    std::cout << "Description: " << description << std::endl;
+    std::cout << "Title: " << getTitle() << std::endl;
+    std::cout << "Description: " << getDesc() << std::endl;
     std::cout << "Number of Seasons: " << seasonCount << std::endl;
-    
 }

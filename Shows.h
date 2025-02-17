@@ -26,7 +26,9 @@ class Shows {
 
         //Functions
         virtual void Play();
+        //friend std::string TV::Details();
         void Details();
+        
 };
 
 

@@ -7,7 +7,6 @@
 
 class TV: public Shows{
     private: 
-        Shows tvShow
         static const int MAX_SEASONS = 5;
         Seasons series[MAX_SEASONS];  //series is an array of seasons
         int seasonCount;    //Current number of seasons 

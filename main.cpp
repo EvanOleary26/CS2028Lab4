@@ -29,7 +29,8 @@ int main() {
         else if (option == 3) {
             // option 3 code
             TV ninjago("Ninjago", "Four ninja warriors swear to protect their golden weapons from Lord Garmadon and his evil skeleton army.");
-        
+            //std::cout << ninjago.getTitle() << std::endl;
+            //std::cout << ninjago.getDesc() << std::endl;
             Seasons season1,season2;
         
             //create season 1
@@ -43,16 +44,25 @@ int main() {
             //add seasons to ninjago
             ninjago.setSeason(0, season1);
             ninjago.setSeason(1, season2);
-        
+            
+            std::cout << "Play" << std::endl;
             ninjago.Play();
+            std::cout << "Details" << std::endl;
+            ninjago.Details();
         }
         else if (option == 4) {
             // option 4 code
-        }
+            Shows *s = new Movies;
+            s->Play();
+
+            s->Details();
+        }   
         else if (option == 5) {
             // option 5 code
-            Shows Ninjago;
-            Ninjago.Play();
+            Shows *s = new TV;
+            s->Play();
+
+            s->Details();
         }
         else {
             std::cout << "Invalid Input";
