@@ -30,19 +30,23 @@ int main() {
             std::cin >> descIn;
             Shows show1(titleIn, descIn); //changes the attributes of the show
 
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //Ignore '\n' for getline
+            
             std::cout << "\nWould you like to play the show? y/n ";
             char playPrompt = ' ';
             std::cin >> playPrompt;
             if (playPrompt == 'y') {
                 show1.Play();
+                std::cout << std::endl;
                 show1.Details();
             }
         }
         else if (option == 2) {
             // option 2 code
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //Ignore '\n' for getline
+
             std::cout << "What is the title of the Movie?" << std::endl;
             std::string titleIn;
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::getline(std::cin, titleIn);
 
             std::cout << "What is the description of the Movie?" << std::endl;
@@ -58,45 +62,110 @@ int main() {
             std::cin >> playPrompt;
             if (playPrompt == 'y') {
                 movie1.Play();
+                std::cout << std::endl;
                 movie1.Details();
             }
 
         }
         else if (option == 3) {
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            //option 3 code
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //Ignore '\n' for getline
 
-            std::cout << "What is the episode of the show?" << std::endl;
-            int episode;
-            std::cin >> episode;
-
-            std::cout << "What is the title of the episode?" << std::endl;
+            std::cout << "What is the title of the TV Show?" << std::endl;
             std::string titleIn;
             std::getline(std::cin, titleIn);
 
-            std::cout << "What is the description of the episode?" << std::endl;
+            std::cout << "What is the description of the TV Show?" << std::endl;
             std::string descIn;
             std::getline(std::cin, descIn);
 
-            Shows epDetails1(titleIn, descIn); //sets the episode details
+            TV userTVShow(titleIn,descIn);
 
-            Seasons ep1; //fixes the episode details to the episode
+            std::cout << "How many seasons in the show?" << std::endl;
+            int numSeasons;
+            std::cin >> numSeasons;
 
-            ep1.setEpisode(episode, epDetails1); //sets the episode overall
+            std::cout << "How many episodes in the show?" << std::endl;
+            int numEpisodes;
+            std::cin >> numEpisodes;
+
+            
+            Seasons curSeason;
+
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //Ignore '\n' for getline
+            
+            for (int s{}; s < numSeasons; s++){
+                for (int e{}; e < numEpisodes; e++){
+
+                    std::cout << "What is the title of episode " << e + 1 << " of season " << s + 1 << "?" << std::endl;
+                    std::string titleIn;
+                    std::getline(std::cin, titleIn);    //get user input for title of current episode and season
+
+                    std::cout << "What is the description for episode " << e + 1 << " of season " << s + 1 << "?" << std::endl;
+                    std::string descIn;
+                    std::getline(std::cin, descIn);     //get user input for description of current episode and season
+
+                    curSeason.setEpisode(e,Shows(titleIn,descIn));
+                }
+                userTVShow.setSeason(s,curSeason);
+            }
+            std::cout << "\nWould you like to play the episode? y/n ";
+            char playPrompt = ' ';
+            std::cin >> playPrompt;
+            if (playPrompt == 'y') {
+                userTVShow.Play();
+                std::cout << std::endl;
+                userTVShow.Details();
+            }
+        }
+        else if (option == 4) {
+            // option 4 code
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //Ignore '\n' for getline
+
+            std::cout << "What is the title of the Movie?" << std::endl;
+            std::string titleIn;
+            std::getline(std::cin, titleIn);
+
+            std::cout << "What is the description of the Movie?" << std::endl;
+            std::string descIn;
+            std::getline(std::cin, descIn);
+            std::cout << "What is the runtime of the movie in minutes?" << std::endl;
+            int runtime;
+            std::cin >> runtime;
+            Shows *movie2 = new Movies(titleIn, descIn, runtime); //changes the attributes of the movie
+
+            std::cout << "\nWould you like to play the movie? y/n ";
+            char playPrompt = ' ';
+            std::cin >> playPrompt;
+            if (playPrompt == 'y') {
+                movie2->Play();
+                std::cout << std::endl;
+                movie2->Details();
+            }
+            
+        }
+        else if (option == 5) {
+            // option 5 code
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //Ignore '\n' for getline
+
+            std::cout << "What is the title of the TV Show?" << std::endl;
+            std::string titleIn;
+            std::getline(std::cin, titleIn);
+
+            std::cout << "What is the description of the TV Show?" << std::endl;
+            std::string descIn;
+            std::getline(std::cin, descIn);
+
+            Shows *userTVShow2 = new TV(titleIn,descIn);
 
             std::cout << "\nWould you like to play the episode? y/n ";
             char playPrompt = ' ';
             std::cin >> playPrompt;
             if (playPrompt == 'y') {
-                ep1.Play();
-                ep1.Details();
+                userTVShow2->Play();
+                std::cout << std::endl;
+                userTVShow2->Details();
             }
-        }
-        else if (option == 4) {
-            // option 4 code
-        }
-        else if (option == 5) {
-            // option 5 code
-
         }
         else {
             std::cout << "Invalid Input";
