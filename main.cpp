@@ -63,7 +63,33 @@ int main() {
 
         }
         else if (option == 3) {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
+            std::cout << "What is the episode of the show?" << std::endl;
+            int episode;
+            std::cin >> episode;
+
+            std::cout << "What is the title of the episode?" << std::endl;
+            std::string titleIn;
+            std::getline(std::cin, titleIn);
+
+            std::cout << "What is the description of the episode?" << std::endl;
+            std::string descIn;
+            std::getline(std::cin, descIn);
+
+            Shows epDetails1(titleIn, descIn); //sets the episode details
+
+            Seasons ep1; //fixes the episode details to the episode
+
+            ep1.setEpisode(episode, epDetails1); //sets the episode overall
+
+            std::cout << "\nWould you like to play the episode? y/n ";
+            char playPrompt = ' ';
+            std::cin >> playPrompt;
+            if (playPrompt == 'y') {
+                ep1.Play();
+                ep1.Details();
+            }
         }
         else if (option == 4) {
             // option 4 code
