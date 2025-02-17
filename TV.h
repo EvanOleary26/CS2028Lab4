@@ -13,19 +13,20 @@ class TV: public Shows{
 
     public:
         //Getters
-        Seasons getSeason(int inVal) {
-            if (inVal >= 0 && inVal < seasonCount) {   //check if inVal is valid
-                return series[inVal];
+        Seasons getSeason(int seasonNum) {
+            if (seasonNum >= 0 && seasonNum < seasonCount) {   //check if seasonNum is valid
+                return series[seasonNum];
             }
             throw std::out_of_range("Season index out of range");
         }
         
         //Setters
-        void setSeason(int inVal, Seasons season) {
-            if (inVal >= 0 && inVal < MAX_SEASONS) {
-                series[inVal] = season;
-                if (inVal >= seasonCount) { //if adding a season more than we already had increase seasonCount to follow that
-                    seasonCount = inVal + 1;
+        //Input the number of the season you want to set, and the season info that will be inputted
+        void setSeason(int seasonNum, Seasons season) {
+            if (seasonNum >= 0 && seasonNum < MAX_SEASONS) {
+                series[seasonNum] = season;
+                if (seasonNum >= seasonCount) { //if adding a season more than we already had increase seasonCount to follow that
+                    seasonCount = seasonNum + 1;
                 }
             }
         }

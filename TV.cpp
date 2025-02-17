@@ -1,23 +1,23 @@
 #include "TV.h"
 
 void TV::Play() {
-    int inSeason, inEp; // Season input and Episode input
+    int inSeasonNum, inEpNum; // Season input and Episode input
 
     std::cout << "What season and episode would you like to play?" << std::endl;
     std::cout << "Enter the season's (1-" << seasonCount << "): ";
-    std::cin >> inSeason;
+    std::cin >> inSeasonNum;
 
-    if (inSeason < 1 || inSeason > seasonCount) {
+    if (inSeasonNum < 1 || inSeasonNum > seasonCount) {
         std::cout << "Invalid season" << std::endl;
         return;
     }
 
     std::cout << "Enter the episode's number: ";
-    std::cin >> inEp;
+    std::cin >> inEpNum;
 
     try {
         //Create episode
-        Shows episode = series[inSeason - 1].getEpisode(inEp - 1);
+        Shows episode = series[inSeasonNum - 1].getEpisode(inEpNum - 1);
 
         //Playing episode
         std::cout << "\nNow playing: " << episode.getTitle() << std::endl;
