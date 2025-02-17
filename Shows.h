@@ -22,11 +22,12 @@ class Shows {
         //Constructors
         Shows() : title(" "), description(" ") {}  //Default Constructor
 
-        Shows(std::string newTitle,std::string newDesc) : title(newTitle), description(newDesc) {}
+        Shows(std::string newTitle,std::string newDesc) : title(newTitle), description(newDesc) {} //2 param constructor
 
         //Functions
         virtual void Play();
         void Details();
+        
 };
 
 

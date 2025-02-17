@@ -3,7 +3,6 @@
 
 void Shows::Play() {
     std::cout << "Playing: " << title << std::endl;
-    Details();
 }
 
 

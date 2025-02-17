@@ -13,10 +13,10 @@ class Seasons: public Shows{
         int episodeCount;   //Current number of episodes
     public:
         //Getters
-        Shows getEpisode(int inVal);
+        Shows getEpisode(int episodeNum);
 
         //Setters 
-        void setEpisode(int inVal,Shows ep);
+        void setEpisode(int episodeNum,Shows newEp); //Episode number , Episode -  Title and Description as a show
 
         //Constructors
         Seasons() : episodeCount(0) {}  //Default Constructor
