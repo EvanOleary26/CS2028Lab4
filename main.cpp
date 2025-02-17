@@ -7,24 +7,6 @@
 #include "TV.h"
 
 int main() {
-
-    TV ninjago("Ninjago", "Four ninja warriors swear to protect their golden weapons from Lord Garmadon and his evil skeleton army.");
-
-    Seasons season1,season2;
-
-    //create season 1
-    season1.setEpisode(0, Shows("Wasted True Potential","In the wake of their previous victory, the ninjas go soft and it is up to Master Wu to remind them of who they truly are."));
-    season1.setEpisode(1, Shows("Questing for Quests","Realising they have gone soft, the ninja search for a quest to reignite their Spinjitzu training. Unfortunately, Ninjago City is enjoying a period of rare tranquillity."));
-
-    //create season 2
-    season2.setEpisode(0, Shows("Darkness Shall Rise","Just as the rebuilding effort in Ninjago begins, the four ninjas come to realise that evil has started to resurface with Lord Garmadon forging the ninjas' lost Golden Weapons."));
-    season2.setEpisode(1, Shows("Pirates vs. Ninja","When Garmadon by accident brings to life the original owners of the Black Bounty - the ruthless Captain Soto and his Pirates - it is up to the ninjas to stop them from plundering Ninjago City."));
-    
-    //add seasons to ninjago
-    ninjago.setSeason(0, season1);
-    ninjago.setSeason(1, season2);
-
-    ninjago.Play();
     
     char continueProgram = 'y';
 
@@ -46,12 +28,31 @@ int main() {
         }
         else if (option == 3) {
             // option 3 code
+            TV ninjago("Ninjago", "Four ninja warriors swear to protect their golden weapons from Lord Garmadon and his evil skeleton army.");
+        
+            Seasons season1,season2;
+        
+            //create season 1
+            season1.setEpisode(0, Shows("Wasted True Potential","In the wake of their previous victory, the ninjas go soft and it is up to Master Wu to remind them of who they truly are."));
+            season1.setEpisode(1, Shows("Questing for Quests","Realising they have gone soft, the ninja search for a quest to reignite their Spinjitzu training. Unfortunately, Ninjago City is enjoying a period of rare tranquillity."));
+        
+            //create season 2
+            season2.setEpisode(0, Shows("Darkness Shall Rise","Just as the rebuilding effort in Ninjago begins, the four ninjas come to realise that evil has started to resurface with Lord Garmadon forging the ninjas' lost Golden Weapons."));
+            season2.setEpisode(1, Shows("Pirates vs. Ninja","When Garmadon by accident brings to life the original owners of the Black Bounty - the ruthless Captain Soto and his Pirates - it is up to the ninjas to stop them from plundering Ninjago City."));
+            
+            //add seasons to ninjago
+            ninjago.setSeason(0, season1);
+            ninjago.setSeason(1, season2);
+        
+            ninjago.Play();
         }
         else if (option == 4) {
             // option 4 code
         }
         else if (option == 5) {
             // option 5 code
+            Shows Ninjago;
+            Ninjago.Play();
         }
         else {
             std::cout << "Invalid Input";
